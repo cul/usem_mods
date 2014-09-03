@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mods:mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:mods="http://www.loc.gov/mods/v3"
+           xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+   <mods:titleInfo>
+      <mods:title>Eighteenth-Century European Culture, seminar 417, 1967-1968</mods:title>
+      <mods:partName>minutes, 1968-04-17</mods:partName>
+   </mods:titleInfo>
+   <mods:name authority="naf" type="corporate">
+      <mods:namePart>Columbia University. University Seminars</mods:namePart>
+   </mods:name>
+   <mods:originInfo>
+      <mods:place>
+         <mods:placeTerm>New York</mods:placeTerm>
+      </mods:place>
+      <mods:dateCreated>1967-1968</mods:dateCreated>
+      <mods:dateCreated encoding="iso8601" keyDate="yes" point="start">1967</mods:dateCreated>
+      <mods:dateCreated encoding="iso8601" keyDate="yes" point="end">1968</mods:dateCreated>
+   </mods:originInfo>
+   <mods:language>
+      <mods:languageTerm>eng</mods:languageTerm>
+   </mods:language>
+   <mods:typeOfResource>text</mods:typeOfResource>
+   <mods:physicalDescription>
+      <mods:form authority="aat">administrative records</mods:form>
+      <mods:form>minutes</mods:form>
+      <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>
+      <mods:internetMediaType>pdf</mods:internetMediaType>
+   </mods:physicalDescription>
+   <mods:relatedItem type="host" displayLabel="project">
+      <mods:titleInfo>
+         <mods:title>University Seminars Digital Archive</mods:title>
+      </mods:titleInfo>
+   </mods:relatedItem>
+   <mods:relatedItem type="host" displayLabel="collection">
+      <mods:titleInfo>
+         <mods:title>University Seminars records</mods:title>
+      </mods:titleInfo>
+   </mods:relatedItem>
+   <mods:note type="original_filename">original filename: 417.AY6768.0417.m.pdf</mods:note>
+   <mods:location>
+      <mods:physicalLocation>Rare Book &amp; Manuscript Library, Columbia University</mods:physicalLocation>
+      <mods:physicalLocation authority="marcorg">NNC-RB</mods:physicalLocation>
+   </mods:location>
+   <mods:recordInfo>
+      <mods:recordIdentifier>??????</mods:recordIdentifier>
+      <mods:languageOfCataloging>
+         <mods:languageTerm>eng</mods:languageTerm>
+      </mods:languageOfCataloging>
+      <mods:recordOrigin>Created and edited in general conformance to MODS Guideline (Version 3)</mods:recordOrigin>
+      <mods:recordContentSource>NNC</mods:recordContentSource>
+   </mods:recordInfo>
+</mods:mods>
