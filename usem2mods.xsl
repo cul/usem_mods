@@ -14,25 +14,29 @@
     </xsl:template>
     <xsl:template match="row">
         <xsl:message select="concat('mods/',translate(filepath, '\\', '/'),'_mods.xml')"/>
-  <xsl:result-document encoding="utf-8" href="mods/{translate(filepath, '\\', '/')}_mods.xml" indent="yes">
+        <xsl:result-document encoding="utf-8" href="mods/{translate(filepath, '\\', '/')}_mods.xml"
+            indent="yes">
             <mods:mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
                 <mods:titleInfo>
                     <mods:title>
+                        <xsl:apply-templates select="content_type" mode="title"/>
+                        <xsl:apply-templates select="date" mode="title"/>
                         <xsl:value-of select="seminar_name"/>
-                        <xsl:text>,&#160;seminar&#160;</xsl:text>
+                        <xsl:text xml:space="preserve">, seminar </xsl:text>
                         <xsl:value-of select="seminar_number"/>
-                        <xsl:text>,&#160;</xsl:text>
+                        <xsl:text xml:space="preserve">, </xsl:text>
                         <xsl:value-of select="academic_year"/>
                     </mods:title>
-                    <mods:partName>
-                        <xsl:value-of select="content_type"/>
-                        <xsl:text>,&#160;</xsl:text>
-                        <xsl:value-of select="date"/>
-                    </mods:partName>
                 </mods:titleInfo>
                 <mods:name authority="naf" type="corporate">
                     <mods:namePart>Columbia University. University Seminars</mods:namePart>
+                </mods:name>
+                <mods:name>
+                    <mods:namePart>
+                        <xsl:text xml:space="preserve">Seminar </xsl:text>
+                        <xsl:value-of select="seminar_number"/>
+                    </mods:namePart>
                 </mods:name>
                 <xsl:apply-templates select="academic_year"/>
                 <mods:language>
@@ -40,6 +44,11 @@
                 </mods:language>
                 <mods:typeOfResource>text</mods:typeOfResource>
                 <xsl:apply-templates select="content_type"/>
+                <mods:subject>
+                    <mods:topic>
+                        <xsl:value-of select="seminar_name"/>
+                    </mods:topic>
+                </mods:subject>
                 <mods:relatedItem type="host" displayLabel="project">
                     <mods:titleInfo>
                         <mods:title>University Seminars Digital Archive</mods:title>
@@ -63,7 +72,7 @@
                     <mods:languageOfCataloging>
                         <mods:languageTerm>eng</mods:languageTerm>
                     </mods:languageOfCataloging>
-                    <mods:recordOrigin>Created and edited in general conformance to MODS Guideline (Version 3)</mods:recordOrigin>
+                    <mods:recordOrigin>Created and edited in general conformance to MODS Guideline. (Version 3)</mods:recordOrigin>
                     <mods:recordContentSource>NNC</mods:recordContentSource>
                 </mods:recordInfo>
             </mods:mods>
@@ -95,5 +104,14 @@
             <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>
             <mods:internetMediaType>pdf</mods:internetMediaType>
         </mods:physicalDescription>
+    </xsl:template>
+    <xsl:template match="content_type" mode="title">
+        <xsl:value-of select="concat(upper-case(substring(.,1,1)),
+            substring(.,2))"/>
+        <xsl:text xml:space="preserve"> </xsl:text>
+    </xsl:template>
+    <xsl:template match="date" mode="title">
+        <xsl:value-of select="."/>
+        <xsl:text xml:space="preserve"> </xsl:text>
     </xsl:template>
 </xsl:stylesheet>
