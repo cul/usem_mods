@@ -3,11 +3,13 @@
            xmlns:mods="http://www.loc.gov/mods/v3"
            xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
    <mods:titleInfo>
-      <mods:title>Full Employment, Social Welfare, and Equity, seminar 613, 1989-1990</mods:title>
-      <mods:partName>minutes, 1990-04-11</mods:partName>
+      <mods:title>Minutes, 1990-04-11. Full Employment, Social Welfare, and Equity, seminar 613, 1989-1990</mods:title>
    </mods:titleInfo>
    <mods:name authority="naf" type="corporate">
       <mods:namePart>Columbia University. University Seminars</mods:namePart>
+   </mods:name>
+   <mods:name>
+      <mods:namePart>Seminar 613</mods:namePart>
    </mods:name>
    <mods:originInfo>
       <mods:place>
@@ -27,6 +29,9 @@
       <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>
       <mods:internetMediaType>pdf</mods:internetMediaType>
    </mods:physicalDescription>
+   <mods:subject>
+      <mods:topic>Full Employment, Social Welfare, and Equity</mods:topic>
+   </mods:subject>
    <mods:relatedItem type="host" displayLabel="project">
       <mods:titleInfo>
          <mods:title>University Seminars Digital Archive</mods:title>
@@ -43,11 +48,11 @@
       <mods:physicalLocation authority="marcorg">NNC-RB</mods:physicalLocation>
    </mods:location>
    <mods:recordInfo>
-      <mods:recordIdentifier>??????</mods:recordIdentifier>
+      <mods:recordIdentifier>ldpd_usem_613.AY8990.0411.m.pdf</mods:recordIdentifier>
       <mods:languageOfCataloging>
          <mods:languageTerm>eng</mods:languageTerm>
       </mods:languageOfCataloging>
-      <mods:recordOrigin>Created and edited in general conformance to MODS Guideline (Version 3)</mods:recordOrigin>
+      <mods:recordOrigin>Created and edited in general conformance to MODS Guideline. (Version 3)</mods:recordOrigin>
       <mods:recordContentSource>NNC</mods:recordContentSource>
    </mods:recordInfo>
 </mods:mods>

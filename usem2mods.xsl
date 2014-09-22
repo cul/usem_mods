@@ -20,8 +20,8 @@
                 xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
                 <mods:titleInfo>
                     <mods:title>
-                        <xsl:apply-templates select="content_type" mode="title"/>
-                        <xsl:apply-templates select="date" mode="title"/>
+                        <xsl:apply-templates select="content_type[text()]" mode="title"/>
+                        <xsl:apply-templates select="date[text()]" mode="title"/>
                         <xsl:value-of select="seminar_name"/>
                         <xsl:text xml:space="preserve">, seminar </xsl:text>
                         <xsl:value-of select="seminar_number"/>
@@ -68,7 +68,10 @@
                     <mods:physicalLocation authority="marcorg">NNC-RB</mods:physicalLocation>
                 </mods:location>
                 <mods:recordInfo>
-                    <mods:recordIdentifier>??????</mods:recordIdentifier>
+                    <mods:recordIdentifier>
+                        <xsl:text>ldpd_usem_</xsl:text>
+                        <xsl:value-of select="filename"/>
+                    </mods:recordIdentifier>
                     <mods:languageOfCataloging>
                         <mods:languageTerm>eng</mods:languageTerm>
                     </mods:languageOfCataloging>
@@ -108,10 +111,10 @@
     <xsl:template match="content_type" mode="title">
         <xsl:value-of select="concat(upper-case(substring(.,1,1)),
             substring(.,2))"/>
-        <xsl:text xml:space="preserve"> </xsl:text>
+        <xsl:text xml:space="preserve">, </xsl:text>
     </xsl:template>
     <xsl:template match="date" mode="title">
         <xsl:value-of select="."/>
-        <xsl:text xml:space="preserve"> </xsl:text>
+        <xsl:text xml:space="preserve">. </xsl:text>
     </xsl:template>
 </xsl:stylesheet>
