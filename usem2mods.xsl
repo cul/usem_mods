@@ -32,7 +32,7 @@
                 <mods:name authority="naf" type="corporate">
                     <mods:namePart>Columbia University. University Seminars</mods:namePart>
                 </mods:name>
-                <mods:name>
+                <mods:name usage="primary">
                     <mods:namePart>
                         <xsl:text xml:space="preserve">Seminar </xsl:text>
                         <xsl:value-of select="seminar_number"/>
