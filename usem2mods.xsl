@@ -44,11 +44,11 @@
                 </mods:language>
                 <mods:typeOfResource>text</mods:typeOfResource>
                 <xsl:apply-templates select="content_type"/>
-                <mods:subject>
+                <mods:subjec authority="local">
                     <mods:topic>
                         <xsl:value-of select="seminar_name"/>
                     </mods:topic>
-                </mods:subject>
+                </mods:subjec>
                 <mods:relatedItem type="host" displayLabel="project">
                     <mods:titleInfo>
                         <mods:title>University Seminars Digital Archive</mods:title>
@@ -93,7 +93,7 @@
             <mods:dateCreated encoding="iso8601" keyDate="yes" point="start">
                 <xsl:value-of select="substring-before(., '-')"/>
             </mods:dateCreated>
-            <mods:dateCreated encoding="iso8601" keyDate="yes" point="end">
+            <mods:dateCreated encoding="iso8601" point="end">
                 <xsl:value-of select="substring-after(., '-')"/>
             </mods:dateCreated>
         </mods:originInfo>
