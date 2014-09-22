@@ -17,7 +17,7 @@
       </mods:place>
       <mods:dateCreated>1991-1992</mods:dateCreated>
       <mods:dateCreated encoding="iso8601" keyDate="yes" point="start">1991</mods:dateCreated>
-      <mods:dateCreated encoding="iso8601" keyDate="yes" point="end">1992</mods:dateCreated>
+      <mods:dateCreated encoding="iso8601" point="end">1992</mods:dateCreated>
    </mods:originInfo>
    <mods:language>
       <mods:languageTerm>eng</mods:languageTerm>
@@ -29,7 +29,7 @@
       <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>
       <mods:internetMediaType>pdf</mods:internetMediaType>
    </mods:physicalDescription>
-   <mods:subject>
+   <mods:subject authority="local">
       <mods:topic>Scientific Literacy</mods:topic>
    </mods:subject>
    <mods:relatedItem type="host" displayLabel="project">

@@ -44,11 +44,11 @@
                 </mods:language>
                 <mods:typeOfResource>text</mods:typeOfResource>
                 <xsl:apply-templates select="content_type"/>
-                <mods:subjec authority="local">
+                <mods:subject authority="local">
                     <mods:topic>
                         <xsl:value-of select="seminar_name"/>
                     </mods:topic>
-                </mods:subjec>
+                </mods:subject>
                 <mods:relatedItem type="host" displayLabel="project">
                     <mods:titleInfo>
                         <mods:title>University Seminars Digital Archive</mods:title>

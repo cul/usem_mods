@@ -17,7 +17,7 @@
       </mods:place>
       <mods:dateCreated>1959-1960</mods:dateCreated>
       <mods:dateCreated encoding="iso8601" keyDate="yes" point="start">1959</mods:dateCreated>
-      <mods:dateCreated encoding="iso8601" keyDate="yes" point="end">1960</mods:dateCreated>
+      <mods:dateCreated encoding="iso8601" point="end">1960</mods:dateCreated>
    </mods:originInfo>
    <mods:language>
       <mods:languageTerm>eng</mods:languageTerm>
@@ -29,7 +29,7 @@
       <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>
       <mods:internetMediaType>pdf</mods:internetMediaType>
    </mods:physicalDescription>
-   <mods:subject>
+   <mods:subject authority="local">
       <mods:topic>Problem of Peace</mods:topic>
    </mods:subject>
    <mods:relatedItem type="host" displayLabel="project">

@@ -17,7 +17,7 @@
       </mods:place>
       <mods:dateCreated>1952-1953</mods:dateCreated>
       <mods:dateCreated encoding="iso8601" keyDate="yes" point="start">1952</mods:dateCreated>
-      <mods:dateCreated encoding="iso8601" keyDate="yes" point="end">1953</mods:dateCreated>
+      <mods:dateCreated encoding="iso8601" point="end">1953</mods:dateCreated>
    </mods:originInfo>
    <mods:language>
       <mods:languageTerm>eng</mods:languageTerm>
@@ -29,7 +29,7 @@
       <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>
       <mods:internetMediaType>pdf</mods:internetMediaType>
    </mods:physicalDescription>
-   <mods:subject>
+   <mods:subject authority="local">
       <mods:topic>Organization and Management</mods:topic>
    </mods:subject>
    <mods:relatedItem type="host" displayLabel="project">
