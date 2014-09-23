@@ -12,7 +12,7 @@
     <xsl:template match="/">
         <xsl:apply-templates select="//row[note01[not(contains(text(),'REMOVE FILE'))]]"/>
     </xsl:template>
-    <xsl:template match="row">
+    <xsl:template match="row[not(contains(note01, 'REMOVE'))]">
         <xsl:message select="concat('mods/',translate(filepath, '\\', '/'),'_mods.xml')"/>
         <xsl:result-document encoding="utf-8" href="mods/{translate(filepath, '\\', '/')}_mods.xml"
             indent="yes">
@@ -20,22 +20,22 @@
                 xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
                 <mods:titleInfo>
                     <mods:title>
+                        <!-- only seminar_name will always be present, for other components only match on non-blank elements -->
                         <xsl:apply-templates select="content_type[text()]" mode="title"/>
                         <xsl:apply-templates select="date[text()]" mode="title"/>
                         <xsl:value-of select="seminar_name"/>
-                        <xsl:text xml:space="preserve">, seminar </xsl:text>
-                        <xsl:value-of select="seminar_number"/>
-                        <xsl:text xml:space="preserve">, </xsl:text>
-                        <xsl:value-of select="academic_year"/>
+                        <xsl:apply-templates select="seminar_number[text()]" mode="title"/>
+                        <xsl:apply-templates select="academic_year[text()]" mode="title"/>
                     </mods:title>
                 </mods:titleInfo>
                 <mods:name authority="naf" type="corporate">
                     <mods:namePart>Columbia University. University Seminars</mods:namePart>
                 </mods:name>
-                <mods:name usage="primary">
+                <!-- primary name: when not blank use seminar_num, otherwise use seminar_name -->
+                <mods:name usage="primary">                   
                     <mods:namePart>
-                        <xsl:text xml:space="preserve">Seminar </xsl:text>
-                        <xsl:value-of select="seminar_number"/>
+                        <xsl:apply-templates mode="name" select="seminar_number[text()]"/>
+                        <xsl:value-of select="seminar_name[preceding-sibling::seminar_number[not(text())]]"/>
                     </mods:namePart>
                 </mods:name>
                 <xsl:apply-templates select="academic_year"/>
@@ -116,5 +116,17 @@
     <xsl:template match="date" mode="title">
         <xsl:value-of select="."/>
         <xsl:text xml:space="preserve">. </xsl:text>
+    </xsl:template>
+    <xsl:template match="seminar_number" mode="title">
+        <xsl:text xml:space="preserve">, seminar </xsl:text>
+        <xsl:value-of select="."/>
+    </xsl:template>
+    <xsl:template match="academic_year" mode="title">
+        <xsl:text xml:space="preserve">, </xsl:text>
+        <xsl:value-of select="."/>
+    </xsl:template>
+    <xsl:template match="seminar_number" mode="name">
+        <xsl:text xml:space="preserve">Seminar </xsl:text>
+        <xsl:value-of select="."/>
     </xsl:template>
 </xsl:stylesheet>
