@@ -20,10 +20,10 @@
                 xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
                 <mods:titleInfo>
                     <mods:title>
-                        <!-- only seminar_name will always be present, for other components only match on non-blank elements -->
+                        <!-- only seminar_name will always be present, for other components only match on non-empty elements -->
                         <xsl:apply-templates select="content_type[text()]" mode="title"/>
                         <xsl:apply-templates select="date[text()]" mode="title"/>
-                        <xsl:value-of select="seminar_name"/>
+                        <xsl:value-of select="seminar_name_title"/>
                         <xsl:apply-templates select="seminar_number[text()]" mode="title"/>
                         <xsl:apply-templates select="academic_year[text()]" mode="title"/>
                     </mods:title>
@@ -31,7 +31,7 @@
                 <mods:name authority="naf" type="corporate">
                     <mods:namePart>Columbia University. University Seminars</mods:namePart>
                 </mods:name>
-                <!-- primary name: when not blank use seminar_num, otherwise use seminar_name -->
+                <!-- primary name: when not empty use seminar_num, otherwise use seminar_name -->
                 <mods:name usage="primary">                   
                     <mods:namePart>
                         <xsl:apply-templates mode="name" select="seminar_number[text()]"/>
