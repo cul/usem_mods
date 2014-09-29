@@ -49,12 +49,12 @@
                         <xsl:value-of select="seminar_name"/>
                     </mods:topic>
                 </mods:subject>
-                <mods:relatedItem type="host" displayLabel="project">
+                <mods:relatedItem type="host" displayLabel="Project">
                     <mods:titleInfo>
                         <mods:title>University Seminars Digital Archive</mods:title>
                     </mods:titleInfo>
                 </mods:relatedItem>
-                <mods:relatedItem type="host" displayLabel="collection">
+                <mods:relatedItem type="host" displayLabel="Collection">
                     <mods:titleInfo>
                         <mods:title>University Seminars records</mods:title>
                     </mods:titleInfo>
