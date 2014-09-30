@@ -32,18 +32,24 @@
                     <mods:namePart>Columbia University. University Seminars</mods:namePart>
                 </mods:name>
                 <!-- primary name: when not empty use seminar_num, otherwise use seminar_name -->
-                <mods:name usage="primary">                   
+                <mods:name usage="primary">
                     <mods:namePart>
                         <xsl:apply-templates mode="name" select="seminar_number[text()]"/>
-                        <xsl:value-of select="seminar_name[preceding-sibling::seminar_number[not(text())]]"/>
+                        <xsl:value-of
+                            select="seminar_name[preceding-sibling::seminar_number[not(text())]]"/>
                     </mods:namePart>
                 </mods:name>
-                <xsl:apply-templates select="academic_year"/>
+                <xsl:apply-templates select="academic_year" mode="origin"/>
                 <mods:language>
                     <mods:languageTerm>eng</mods:languageTerm>
                 </mods:language>
                 <mods:typeOfResource>text</mods:typeOfResource>
-                <xsl:apply-templates select="content_type"/>
+                <mods:physicalDescription>
+                    <mods:form authority="aat">administrative records</mods:form>
+                    <xsl:apply-templates select="content_type[text()]" mode="form"/>
+                    <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>
+                    <mods:internetMediaType>pdf</mods:internetMediaType>
+                </mods:physicalDescription>
                 <mods:subject authority="local">
                     <mods:topic>
                         <xsl:value-of select="seminar_name"/>
@@ -75,14 +81,13 @@
                     <mods:languageOfCataloging>
                         <mods:languageTerm>eng</mods:languageTerm>
                     </mods:languageOfCataloging>
-                    <mods:recordOrigin>Created and edited in general conformance to MODS Guideline. (Version 3)</mods:recordOrigin>
+                    <mods:recordOrigin>Created and edited in general conformance to MODS Guidelines. (Version 3)</mods:recordOrigin>
                     <mods:recordContentSource>NNC</mods:recordContentSource>
                 </mods:recordInfo>
             </mods:mods>
         </xsl:result-document>
-
     </xsl:template>
-    <xsl:template match="academic_year">
+    <xsl:template match="academic_year" mode="origin">
         <mods:originInfo>
             <mods:place>
                 <mods:placeTerm>New York</mods:placeTerm>
@@ -98,15 +103,10 @@
             </mods:dateCreated>
         </mods:originInfo>
     </xsl:template>
-    <xsl:template match="content_type">
-        <mods:physicalDescription>
-            <mods:form authority="aat">administrative records</mods:form>
-            <mods:form authority="local">
-                <xsl:value-of select="."/>
-            </mods:form>
-            <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>
-            <mods:internetMediaType>pdf</mods:internetMediaType>
-        </mods:physicalDescription>
+    <xsl:template match="content_type" mode="form">
+        <mods:form authority="local">
+            <xsl:value-of select="."/>
+        </mods:form>
     </xsl:template>
     <xsl:template match="content_type" mode="title">
         <xsl:value-of select="concat(upper-case(substring(.,1,1)),
