@@ -52,7 +52,7 @@
       <mods:languageOfCataloging>
          <mods:languageTerm>eng</mods:languageTerm>
       </mods:languageOfCataloging>
-      <mods:recordOrigin>Created and edited in general conformance to MODS Guideline. (Version 3)</mods:recordOrigin>
+      <mods:recordOrigin>Created and edited in general conformance to MODS Guidelines. (Version 3)</mods:recordOrigin>
       <mods:recordContentSource>NNC</mods:recordContentSource>
    </mods:recordInfo>
 </mods:mods>

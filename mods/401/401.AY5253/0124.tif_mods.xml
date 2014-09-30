@@ -25,7 +25,6 @@
    <mods:typeOfResource>text</mods:typeOfResource>
    <mods:physicalDescription>
       <mods:form authority="aat">administrative records</mods:form>
-      <mods:form authority="local"/>
       <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>
       <mods:internetMediaType>pdf</mods:internetMediaType>
    </mods:physicalDescription>
@@ -52,7 +51,7 @@
       <mods:languageOfCataloging>
          <mods:languageTerm>eng</mods:languageTerm>
       </mods:languageOfCataloging>
-      <mods:recordOrigin>Created and edited in general conformance to MODS Guideline. (Version 3)</mods:recordOrigin>
+      <mods:recordOrigin>Created and edited in general conformance to MODS Guidelines. (Version 3)</mods:recordOrigin>
       <mods:recordContentSource>NNC</mods:recordContentSource>
    </mods:recordInfo>
 </mods:mods>
