@@ -101,7 +101,7 @@
     <xsl:template match="content_type">
         <mods:physicalDescription>
             <mods:form authority="aat">administrative records</mods:form>
-            <mods:form>
+            <mods:form authority="local">
                 <xsl:value-of select="."/>
             </mods:form>
             <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>

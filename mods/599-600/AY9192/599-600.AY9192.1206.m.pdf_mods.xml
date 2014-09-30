@@ -25,7 +25,7 @@
    <mods:typeOfResource>text</mods:typeOfResource>
    <mods:physicalDescription>
       <mods:form authority="aat">administrative records</mods:form>
-      <mods:form>minutes</mods:form>
+      <mods:form authority="local">minutes</mods:form>
       <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>
       <mods:internetMediaType>pdf</mods:internetMediaType>
    </mods:physicalDescription>

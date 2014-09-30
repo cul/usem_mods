@@ -25,7 +25,7 @@
    <mods:typeOfResource>text</mods:typeOfResource>
    <mods:physicalDescription>
       <mods:form authority="aat">administrative records</mods:form>
-      <mods:form>speaker's notes</mods:form>
+      <mods:form authority="local">speaker's notes</mods:form>
       <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>
       <mods:internetMediaType>pdf</mods:internetMediaType>
    </mods:physicalDescription>
